@@ -48,7 +48,7 @@ int main(void)
 	SetEmissivity(slave_address, 0);
 	Delay_us(6000);
 	
-	SetEmissivity(slave_address, 0.99);
+	SetEmissivity(slave_address, 0.9);
 	Delay_us(6000);
 	
 	emissivity_hex = GetEmissivity(slave_address);
@@ -56,15 +56,11 @@ int main(void)
 	emissivity = (float)emissivity_hex / (float)65535;
 	UART_PRINTF("emissivity = %.1f\n", emissivity);
 	
-	while(1 )
+	while(1)
 	{
 		temp = GetTemp(slave_address);
 		temperture = temp * 0.02 - 273.15;
 		UART_PRINTF("temp = %.2f\n", temperture);	
-		
-		i++;
-		
-		//break;
 	}
 		
 }

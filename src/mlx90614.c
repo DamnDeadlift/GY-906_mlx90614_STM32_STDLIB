@@ -3,8 +3,8 @@
 
 extern void Delay_us(uint16_t us);
 
-uint8_t crc_buffer[5] = {0x00,0x00,0x00,0x00,0x00};
-uint8_t cnt = 0;
+uint8_t crc_buffer[5] = {0x00,0x00,0x00,0x00,0x00}; //used to save the data to send
+uint8_t cnt = 0; //used to save how many times the master device send byte 
 
 void SMBus_Init(void)
 {
